@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Layout/Header";
 import Cities from "./components/City/Cities";
 import MainCity from "./components/Layout/MainCity";
+
 function App() {
   const [cities, setCities] = useState([]);
-  const [toronto, setToronto] = useState({});
+  const [mainCity, setMainCity] = useState({ localtime: new Date() });
 
   const fetchCityDataByName = async (cityName) => {
     const response = await fetch(
@@ -19,6 +20,7 @@ function App() {
       name: responseData.location.name,
       climate: responseData.current.condition.icon,
       temperature: responseData.current.temp_c,
+      localtime: new Date(responseData.location.localtime),
     };
 
     return loadedCity;
@@ -42,10 +44,8 @@ function App() {
     const fetchMainCity = async () => {
       const cityName = "Toronto";
 
-      const loadedToronto = await fetchCityDataByName(cityName);
-
-      setToronto(loadedToronto);
-      console.log(loadedToronto);
+      const loadedMainCity = await fetchCityDataByName(cityName);
+      setMainCity(loadedMainCity);
     };
     fetchMainCity();
   }, []);
@@ -53,7 +53,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MainCity mainCityWeather={toronto} />
+      <MainCity mainCityWeather={mainCity} />
       <Cities items={cities} />
     </div>
   );
