@@ -1,20 +1,41 @@
+import React, { useState, useEffect } from "react";
 import Card from "../UI/Card";
 import ChoosedCity from "./ChoosedCity";
 import "./Cities.css";
+import { fetchCityDataByName } from "../../Utils";
 
-function Cities(props) {
-  const currentCityList = props.items.map((item) => (
+function Cities() {
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      const cityNames = ["London", "Sydney", "Melbourne"];
+      const loadedCities = [];
+
+      for (const name of cityNames) {
+        const loadedCity = await fetchCityDataByName(name);
+        loadedCities.push(loadedCity);
+      }
+
+      setCities(loadedCities);
+    };
+
+    fetchCities();
+  }, []);
+
+  const currentCityList = cities.map((city) => (
     <ChoosedCity
-      key={item.id}
-      city={item.name}
-      climate={item.climate}
-      temp_c={item.temperature}
-      localtime={item.localtime.toLocaleTimeString("en-AU", {
+      key={city.id}
+      city={city.name}
+      climate={city.climate}
+      temp_c={city.temperature}
+      localtime={city.localtime.toLocaleTimeString("en-AU", {
         hour: "2-digit",
         minute: "2-digit",
       })}
     />
   ));
+
   return <Card className="cities">{currentCityList}</Card>;
 }
 
