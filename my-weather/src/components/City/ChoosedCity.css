@@ -20,11 +20,17 @@
 }
 
 .choosed-city h2 {
-  color: #3a3a3a;
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
   color: white;
+}
+
+.choosed-city h3 {
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 1rem;
+  color: #d7e3fc;
 }
 
 .choosed-city__temperature {

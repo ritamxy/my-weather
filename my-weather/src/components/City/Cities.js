@@ -3,22 +3,17 @@ import ChoosedCity from "./ChoosedCity";
 import "./Cities.css";
 
 function Cities(props) {
+  const currentCityList = props.items.map((item) => (
+    <ChoosedCity
+      key={item.id}
+      city={item.name}
+      climate={item.climate}
+      temp_c={item.temperature}
+    />
+  ));
   return (
     <div>
-      <Card className="cities">
-        <ChoosedCity
-          name={props.items[0].name}
-          temperature={props.items[0].temperature}
-        />
-        <ChoosedCity
-          name={props.items[1].name}
-          temperature={props.items[1].temperature}
-        />
-        <ChoosedCity
-          name={props.items[2].name}
-          temperature={props.items[2].temperature}
-        />
-      </Card>
+      <Card className="cities">{currentCityList}</Card>
     </div>
   );
 }
