@@ -9,6 +9,10 @@ function Cities(props) {
       city={item.name}
       climate={item.climate}
       temp_c={item.temperature}
+      localtime={item.localtime.toLocaleTimeString("en-AU", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}
     />
   ));
   return <Card className="cities">{currentCityList}</Card>;
