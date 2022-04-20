@@ -11,11 +11,7 @@ function Cities(props) {
       temp_c={item.temperature}
     />
   ));
-  return (
-    <div>
-      <Card className="cities">{currentCityList}</Card>
-    </div>
-  );
+  return <Card className="cities">{currentCityList}</Card>;
 }
 
 export default Cities;

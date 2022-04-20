@@ -1,0 +1,34 @@
+.mainCityName {
+  position: absolute;
+  top: 3em;
+  color: #edf2fb;
+  right: 10rem;
+  font-size: 3rem;
+  z-index: 10;
+  margin: 0.5rem;
+}
+
+.mainCityTemperature {
+  position: absolute;
+  margin: 0.5rem;
+  top: 13rem;
+  left: 10rem;
+  color: #edf2fb;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.snowMountain {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+}
+.snowMountain img {
+  width: 110%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.climateIcon {
+}
