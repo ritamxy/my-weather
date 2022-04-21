@@ -2,6 +2,7 @@ import "./MainCity.css";
 import snowImage from "../../assets/snow-mountain.jpg";
 import React, { useState, useEffect } from "react";
 import { fetchCityDataByName } from "../../Utils";
+import { Fragment } from "react";
 
 const MainCity = () => {
   const [mainCity, setMainCity] = useState({ localtime: new Date() });
@@ -26,7 +27,7 @@ const MainCity = () => {
   });
 
   return (
-    <div>
+    <Fragment>
       <div className="snowMountain">
         <img src={snowImage} alt="" />
       </div>
@@ -37,7 +38,7 @@ const MainCity = () => {
         <img className="climateIcon" src={climate} alt="" />
         <span>{temperature}°C</span>
       </span>
-    </div>
+    </Fragment>
   );
 };
 

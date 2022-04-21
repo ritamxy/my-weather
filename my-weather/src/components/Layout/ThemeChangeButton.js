@@ -1,8 +1,9 @@
 import classes from "./ThemeChangeButton.module.css";
+import { Fragment } from "react";
 
 const ThemeChangeButton = () => {
   return (
-    <div>
+    <Fragment>
       <button className={classes.button}>
         <span className={classes.icon}>
           <svg
@@ -18,7 +19,7 @@ const ThemeChangeButton = () => {
         </span>
         <span>Change The Theme</span>
       </button>
-    </div>
+    </Fragment>
   );
 };
 

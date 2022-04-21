@@ -1,14 +1,14 @@
 import classes from "./Header.module.css";
 import ThemeChangeButton from "./ThemeChangeButton";
-
+import { Fragment } from "react";
 const Header = () => {
   return (
-    <div>
+    <Fragment>
       <header className={classes.header}>
         <h1>My Weather</h1>
         <ThemeChangeButton />
       </header>
-    </div>
+    </Fragment>
   );
 };
 
