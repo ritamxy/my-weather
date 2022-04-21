@@ -1,0 +1,23 @@
+.new-city {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  background-color: #b6ccfe;
+  flex-direction: column;
+  width: 15rem;
+}
+
+.new-city button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #abc4ff;
+  background-color: #edf2fb;
+  border: 1px solid #abc4ff;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+}

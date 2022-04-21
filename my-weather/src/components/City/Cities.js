@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Card from "../UI/Card";
 import ChoosedCity from "./ChoosedCity";
 import "./Cities.css";
+import NewCity from "./NewCity";
 import { fetchCityDataByName } from "../../Utils";
 
-function Cities() {
+function Cities(props) {
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
@@ -36,7 +37,12 @@ function Cities() {
     />
   ));
 
-  return <Card className="cities">{currentCityList}</Card>;
+  return (
+    <Card className="cities">
+      {currentCityList}
+      <NewCity onShowAddCity={props.onShowAddCity} />
+    </Card>
+  );
 }
 
 export default Cities;
